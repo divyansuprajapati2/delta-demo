@@ -1,2 +1,2 @@
 # delta-demo
-This is demo for new accessing
+This is demo for new accessing.
