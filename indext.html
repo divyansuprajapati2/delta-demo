@@ -45,6 +45,81 @@
         npm install #package name# ( for install dependency )
 
 
+
+        Database : 
+        
+        create table #table_name# (
+            #column_name# #data_type#,
+            #column_name# #data_type#,
+            #column_name# #data_type#,
+            ...
+        );
+
+        insert into #table_name#
+        values 
+        (    ),
+        (    );
+
+        select * from #table_name#; <!-- show table-->
+
+        create database if not exists #database_name#; <!-- check if is exist or not -->
+
+        show databases; <!-- show all databases -->
+        show table; <!-- show all tables -->
+
+        use #database_name#; <!-- navigate to database -->
+
+        SELECT col1,col2 FROM #table_name# <!-- show specific column data and -->
+        
+        SELECT * FROM #table_name# <!-- check all data from db-->
+
+        SELECT DISTINCT col1 FROM #table_name# <!-- check unique data from db-->
+
+        select * ( col1 , col 2)  form  #table_name# where follower >= 200 or age < 16  <!-- show specific condition  -->
+        select * ( col1 , col 2)  form  #table_name# where follower >= 200 or age  between 16 and 17 <!-- show specific condition  -->
+        SELECT name , follower , email
+        FROM users
+        WHERE email IN ("gfgf@gmail.com","rggr@gmail.com","abc@gmail.com") ;
+
+        SELECT name , follower , age
+        FROM users
+        WHERE age NOT IN (15 ,18) ;
+
+        SELECT name , follower , age
+        FROM users
+        where age NOT IN (15 ,18)
+        LIMIT 4;
+
+        SELECT name , follower , age
+        FROM users
+        ORDER BY age ASC; <!-- for ascending order -->
+        ORDER BY age DESC; <!-- for descending order  if not specify then default is ascending --> 
+
+        * Aggregate function *
+        count() ,min() , max() , sum() , avg()
+        
+        SELECT max(follower)
+        FROM users;
+
+        SELECT name , age , max(follower)
+        FROM users
+        GROUP BY age; <!-- this is group by clause if you add name column it's throw error because it's not added in grouping that's why -->
+        
+        SELECT name , age , max(follower)
+        FROM users
+        GROUP BY age
+        HAVING max(follower) > 200; <!-- this is having by clause if you add having clause  so first is neccessary to add group by clause  if it's not added not use having  -->
+
+        set sql_safe_updates = 0 ;  <!-- if you are first time update data then run this line if error occur -->
+         
+        UPDATE #table_name#
+        SET #column_name# = #value# , #column_name# = #value#
+        WHERE condition;   <!-- update rows data-->
+
+        DELETE FROM #table_name#
+        WHERE condition;  <!-- delete rows data if you not write  WHERE condition then it's delete all rows-->
+
+
     </P>
 </body>
 </html>
